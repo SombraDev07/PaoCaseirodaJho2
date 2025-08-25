@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pão & Conversa - Mobile</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @keyframes fadeInUp {
@@ -29,68 +30,25 @@
     </style>
 </head>
 <body class="bg-gradient-to-br from-amber-50 to-orange-100 min-h-screen">
-    <!-- Mobile-First Container -->
     <div class="px-4 py-6 max-w-sm mx-auto">
         
-        <!-- Header -->
         <div class="text-center mb-6 fade-in-up">
             <h1 class="text-2xl font-bold text-amber-800 mb-2">🍞 Pão & Conversa</h1>
-            <p class="text-sm text-amber-700 mb-4">Escaneie para descobrir dicas incríveis!</p>
-            
-            <!-- Compact QR Code -->
-            <div class="inline-block bg-white p-4 rounded-xl shadow-lg pulse">
-                <svg width="120" height="120" viewBox="0 0 120 120" class="border border-amber-200 rounded">
-                    <rect width="120" height="120" fill="white"/>
-                    <!-- Corner squares -->
-                    <rect x="6" y="6" width="36" height="36" fill="black"/>
-                    <rect x="12" y="12" width="24" height="24" fill="white"/>
-                    <rect x="18" y="18" width="12" height="12" fill="black"/>
-                    
-                    <rect x="78" y="6" width="36" height="36" fill="black"/>
-                    <rect x="84" y="12" width="24" height="24" fill="white"/>
-                    <rect x="90" y="18" width="12" height="12" fill="black"/>
-                    
-                    <rect x="6" y="78" width="36" height="36" fill="black"/>
-                    <rect x="12" y="84" width="24" height="24" fill="white"/>
-                    <rect x="18" y="90" width="12" height="12" fill="black"/>
-                    
-                    <!-- Data pattern -->
-                    <rect x="54" y="12" width="6" height="6" fill="black"/>
-                    <rect x="66" y="12" width="6" height="6" fill="black"/>
-                    <rect x="54" y="24" width="6" height="6" fill="black"/>
-                    <rect x="60" y="30" width="6" height="6" fill="black"/>
-                    <rect x="48" y="36" width="6" height="6" fill="black"/>
-                    <rect x="60" y="42" width="6" height="6" fill="black"/>
-                    <rect x="72" y="48" width="6" height="6" fill="black"/>
-                    <rect x="54" y="54" width="6" height="6" fill="black"/>
-                    <rect x="66" y="60" width="6" height="6" fill="black"/>
-                    <rect x="48" y="66" width="6" height="6" fill="black"/>
-                    <rect x="60" y="72" width="6" height="6" fill="black"/>
-                    <rect x="72" y="78" width="6" height="6" fill="black"/>
-                    <rect x="54" y="84" width="6" height="6" fill="black"/>
-                    <rect x="66" y="90" width="6" height="6" fill="black"/>
-                    <rect x="78" y="96" width="6" height="6" fill="black"/>
-                    <rect x="90" y="102" width="6" height="6" fill="black"/>
-                    <rect x="102" y="108" width="6" height="6" fill="black"/>
-                </svg>
-            </div>
+            <p class="text-sm text-amber-700 mb-4">Descubra dicas incríveis!</p>
             
             <button onclick="showContent()" class="mt-4 w-full bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg active:scale-95">
-                📱 Escanear Agora
+                📱 Ver Dicas
             </button>
         </div>
 
-        <!-- New Page Content (Hidden initially) -->
         <div id="newPage" class="hidden space-y-6">
             
-            <!-- Page Transition Animation -->
             <div class="text-center fade-in-up">
                 <div class="text-5xl mb-4 bounce">🍞✨</div>
                 <h2 class="text-2xl font-bold text-amber-800 mb-2">Receita Especial</h2>
                 <p class="text-sm text-amber-700">Segredos revelados para você!</p>
             </div>
 
-            <!-- Ingredientes -->
             <div class="bg-white rounded-xl p-5 shadow-lg fade-in-up delay-1">
                 <div class="flex items-center mb-4">
                     <div class="text-2xl mr-3">🥖</div>
@@ -126,7 +84,6 @@
                 </div>
             </div>
 
-            <!-- Dicas de Conservação -->
             <div class="bg-white rounded-xl p-5 shadow-lg fade-in-up delay-2">
                 <div class="flex items-center mb-4">
                     <div class="text-2xl mr-3">🏠</div>
@@ -148,7 +105,6 @@
                 </div>
             </div>
 
-            <!-- Como Renovar a Maciez -->
             <div class="bg-white rounded-xl p-5 shadow-lg fade-in-up delay-3">
                 <div class="flex items-center mb-4">
                     <div class="text-2xl mr-3">🔄</div>
@@ -169,7 +125,6 @@
                 </div>
             </div>
 
-            <!-- Cupom de Desconto -->
             <div class="bg-gradient-to-r from-green-400 to-emerald-500 rounded-xl p-5 shadow-lg fade-in-up delay-4 text-white">
                 <div class="text-center">
                     <div class="text-3xl mb-2">🎉</div>
@@ -192,18 +147,17 @@
                 </div>
             </div>
 
-            <!-- Footer -->
             <div class="text-center py-4 fade-in-up delay-4">
                 <div class="text-2xl mb-2">🍞💚</div>
                 <p class="text-xs text-amber-700">Obrigado por escolher nossos pães!</p>
-                <button onclick="goBack()" class="mt-3 text-xs text-amber-600 underline">← Voltar ao QR Code</button>
+                <button onclick="goBack()" class="mt-3 text-xs text-amber-600 underline">← Voltar</button>
             </div>
         </div>
     </div>
 
     <script>
         function showContent() {
-            // Hide QR code section
+            // Hide initial section
             document.querySelector('.px-4.py-6.max-w-sm.mx-auto > div:first-child').style.display = 'none';
             
             // Show new page
@@ -251,7 +205,7 @@
             // Try to copy to clipboard
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(couponCode).then(() => {
-                    showCopyFeedback();
+                    showCopyFeedback(event.target);
                 });
             } else {
                 // Fallback for older browsers
@@ -261,12 +215,11 @@
                 textArea.select();
                 document.execCommand('copy');
                 document.body.removeChild(textArea);
-                showCopyFeedback();
+                showCopyFeedback(event.target);
             }
         }
 
-        function showCopyFeedback() {
-            const button = event.target;
+        function showCopyFeedback(button) {
             const originalText = button.innerHTML;
             button.innerHTML = '✅ Copiado!';
             button.classList.add('bg-green-500');
@@ -283,7 +236,7 @@
         }
 
         function goBack() {
-            // Show QR code section again
+            // Show initial section again
             document.querySelector('.px-4.py-6.max-w-sm.mx-auto > div:first-child').style.display = 'block';
             
             // Hide new page
@@ -296,5 +249,5 @@
         // Touch-friendly interactions
         document.addEventListener('touchstart', function() {}, {passive: true});
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'974e62a26239f231',t:'MTc1NjE1OTQ2OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>
